@@ -1,4 +1,4 @@
-from disutils.core import setup, Extensions
+from distutils.core import setup, Extension
 
 module= Extension('myModule', sources=['myModule.c'])
 
