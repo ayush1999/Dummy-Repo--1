@@ -4,7 +4,7 @@
 %{
 #include <stdio.h>
 #include "prime.h"
-extern void prime(int x);	
+extern bool prime(int x);	
 %}
 
-extern void prime(int x);
+extern bool prime(int x);

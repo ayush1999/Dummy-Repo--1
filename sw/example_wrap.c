@@ -2997,16 +2997,16 @@ static swig_module_info swig_module = {swig_types, 1, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _prime.so
+              @(target):= _example.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__prime
+#  define SWIG_init    PyInit__example
 
 #else
-#  define SWIG_init    init_prime
+#  define SWIG_init    init_example
 
 #endif
-#define SWIG_name    "_prime"
+#define SWIG_name    "_example"
 
 #define SWIGVERSION 0x030008 
 #define SWIG_VERSION SWIGVERSION
@@ -3016,9 +3016,8 @@ static swig_module_info swig_module = {swig_types, 1, 0, 0, 0, 0};
 #define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),(void**)(a)) 
 
 
-#include <stdio.h>
-#include "prime.h"
-extern bool prime(int x);	
+#define SWIG_FILE_WITH_INIT
+#include "example.h"
 
 
 #include <limits.h>
@@ -3173,30 +3172,30 @@ SWIG_AsVal_int (PyObject * obj, int *val)
 
 
 SWIGINTERNINLINE PyObject*
-  SWIG_From_bool  (bool value)
+  SWIG_From_int  (int value)
 {
-  return PyBool_FromLong(value ? 1 : 0);
+  return PyInt_FromLong((long) value);
 }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-SWIGINTERN PyObject *_wrap_prime(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_fact(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   int arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   PyObject * obj0 = 0 ;
-  bool result;
+  int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:prime",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:fact",&obj0)) SWIG_fail;
   ecode1 = SWIG_AsVal_int(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "prime" "', argument " "1"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "fact" "', argument " "1"" of type '" "int""'");
   } 
   arg1 = (int)(val1);
-  result = (bool)prime(arg1);
-  resultobj = SWIG_From_bool((bool)(result));
+  result = (int)fact(arg1);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3205,7 +3204,7 @@ fail:
 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"prime", _wrap_prime, METH_VARARGS, NULL},
+	 { (char *)"fact", _wrap_fact, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

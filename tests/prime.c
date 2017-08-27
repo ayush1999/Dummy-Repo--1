@@ -1,6 +1,6 @@
 #include "prime.h"
 #include <stdio.h>
-void prime(int x){
+bool prime(int x){
     int count=0,i;
     for(i=2;i<x;i++){
     	if (x%i==0){
@@ -10,8 +10,8 @@ void prime(int x){
     	else continue;
     }
 if (count==0){
-	printf("Yes\n");
+	return True;
 }
 else
-	printf("No\n");
+	return False;
 }
