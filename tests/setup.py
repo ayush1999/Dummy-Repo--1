@@ -2,7 +2,7 @@ from distutils.core import setup, Extension
 name="prime"
 version="1.0"
 
-ext_modules= Extension(name='_prime', sources=["prime.i","prime.c"])
+ext_modules= Extension(name='_prime', sources=["prime.i","prime.cpp"])
 
 setup(name=name,
 	version=version,
