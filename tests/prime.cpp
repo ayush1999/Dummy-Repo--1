@@ -1,4 +1,4 @@
-#include "prime.h"
+#include "prime"
 #include <stdio.h>
 bool prime(int x){
     int count=0,i;

@@ -1,8 +1,7 @@
-class number{
+class Number{
 public:
-    Number(int start);
     void add(int x);
     void sub(int x);
     void display();
-    int data;
-}
+    int data=0;
+};

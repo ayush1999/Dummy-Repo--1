@@ -15,20 +15,20 @@ if version_info >= (2, 6, 0):
         import imp
         fp = None
         try:
-            fp, pathname, description = imp.find_module('_number', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_powerlaw', [dirname(__file__)])
         except ImportError:
-            import _number
-            return _number
+            import _powerlaw
+            return _powerlaw
         if fp is not None:
             try:
-                _mod = imp.load_module('_number', fp, pathname, description)
+                _mod = imp.load_module('_powerlaw', fp, pathname, description)
             finally:
                 fp.close()
             return _mod
-    _number = swig_import_helper()
+    _powerlaw = swig_import_helper()
     del swig_import_helper
 else:
-    import _number
+    import _powerlaw
 del version_info
 try:
     _swig_property = property
@@ -89,37 +89,6 @@ except AttributeError:
         pass
     _newclass = 0
 
-
-class Number(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Number, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, Number, name)
-    __repr__ = _swig_repr
-
-    def add(self, x):
-        return _number.Number_add(self, x)
-
-    def sub(self, x):
-        return _number.Number_sub(self, x)
-
-    def display(self):
-        return _number.Number_display(self)
-    __swig_setmethods__["data"] = _number.Number_data_set
-    __swig_getmethods__["data"] = _number.Number_data_get
-    if _newclass:
-        data = _swig_property(_number.Number_data_get, _number.Number_data_set)
-
-    def __init__(self):
-        this = _number.new_Number()
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-    __swig_destroy__ = _number.delete_Number
-    __del__ = lambda self: None
-Number_swigregister = _number.Number_swigregister
-Number_swigregister(Number)
 
 # This file is compatible with both classic and new-style classes.
 

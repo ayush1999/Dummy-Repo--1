@@ -3,7 +3,7 @@
 %module prime
 %{
 #include <stdio.h>
-#include "prime.h"
+#include "prime"
 extern bool prime(int x);	
 %}
 
